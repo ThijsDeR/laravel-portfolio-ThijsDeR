@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:export {
+  assetsLink: "./img";
+  mainBackground: #2f3136;
+  backgroundGradient: linear-gradient(#2f3136, #2a2c31); }
+
+html {
+  scroll-behavior: smooth; }
+
+@keyframes AnimateIn {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0px);
+    opacity: 1; } }
+
+@keyframes visible {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-track {
+  margin: 20px 0;
+  display: hidden; }
+
+::-webkit-scrollbar-thumb {
+  background-color: whitesmoke;
+  border-radius: 25px; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(#2f3136, #2a2c31);
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  color: whitesmoke; }
+
+main {
+  animation: AnimateIn 1s ease-out;
+  position: fixed;
+  top: 75px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll; }
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid whitesmoke;
+  color: inherit; }
+
+@media screen and (max-width: 800px) {
+  main.hidden {
+    display: none; } }

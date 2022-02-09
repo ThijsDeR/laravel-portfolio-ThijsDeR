@@ -1,0 +1,45 @@
+@keyframes Hover {
+    0% {
+      transform: translateY(-10px); }
+    50% {
+      transform: translateY(10px); }
+    100% {
+      transform: translateY(-10px); } }
+  
+  main {
+    position: relative;
+    height: calc(100vh - 75px); }
+  
+  div#notfound {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 75%; }
+    div#notfound div#page-info {
+      margin: auto 0;
+      font-size: 1.5vw; }
+      div#notfound div#page-info h2 {
+        padding: 0;
+        margin: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+    div#notfound img {
+      width: 25vw;
+      height: 25vw;
+      animation: Hover 5s ease-in-out infinite; }
+  
+  @media screen and (max-width: 800px) {
+    div#notfound {
+      max-width: 100%;
+      flex-direction: column; }
+      div#notfound div#page-info {
+        margin: auto auto;
+        font-size: 20px; }
+      div#notfound img {
+        width: 50vw;
+        height: 50vw; } }
+  

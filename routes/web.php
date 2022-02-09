@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +29,22 @@ Route::get('/posts/{post}', function ($post) {
     }
 
     return view('post', [
-        'post' => $posts[$post]
+        'post' => $posts[$post],
+        'title' => 'posts'
     ]);
 });
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'show']);
+Route::get('/home', [HomeController::class, 'show']);
+Route::get('/profile', [ProfileController::class, 'show']);
+Route::get('/dashboard', [DashboardController::class, 'show']);
+Route::get('/faq', [FaqController::class, 'show']);
+Route::get('/blog', [BlogController::class, 'show']);
+
+
+
+Route::get('/{title}', function ($title) {
+    return view('pagenotfound', [
+        'title' => ucwords($title)
+    ]);
 });

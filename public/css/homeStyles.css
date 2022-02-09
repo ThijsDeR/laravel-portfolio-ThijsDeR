@@ -1,0 +1,72 @@
+div#section_header {
+    position: relative;
+    width: 100%;
+    height: 200px; }
+    div#section_header img {
+      position: absolute; }
+    div#section_header span {
+      color: inherit;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+      font-size: 6vw; }
+      div#section_header span#my {
+        position: absolute;
+        top: 69%;
+        left: 30%;
+        transform: translate(-50%, -50%); }
+      div#section_header span#future {
+        position: absolute;
+        top: 69%;
+        left: 69%;
+        transform: translate(-50%, -50%); }
+  
+  img#hz_logo {
+    height: 10vw;
+    width: 7.5vw;
+    z-index: 1;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer; }
+  
+  img#programming {
+    width: 100%;
+    height: 200px; }
+  
+  article {
+    z-index: 5; }
+  
+  div#pitch {
+    width: 80%;
+    margin: 0 10%; }
+    div#pitch p {
+      color: inherit;
+      font-size: 15px; }
+      div#pitch p#intro {
+        font-size: 20px; }
+    div#pitch ul li {
+      color: inherit;
+      font-size: 15px; }
+  
+  span#print {
+    color: #cab15c; }
+  
+  span#hello {
+    color: #9a432f; }
+  
+  a {
+    transition: 0.5s; }
+    a:hover {
+      text-shadow: 0px 0px 50px whitesmoke;
+      transition: 0.5s; }
+  
+  @media screen and (min-width: 800px) {
+    div#pitch p#intro {
+      margin-bottom: 64px; } }
+  
+  @media screen and (max-width: 800px) {
+    img#hz_logo {
+      height: 20vw;
+      width: 15vw; } }
+  

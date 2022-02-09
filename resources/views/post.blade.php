@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge"
           >
-    <title>Document</title>
+    <title>{{ $title; }}</title>
 </head>
 <body>
     <h1>My Blog Post</h1>
