@@ -43,12 +43,15 @@
         <div id="section" class="active">
             <article>
                 <h2 id="ik">Wie ben ik?</h2>
-                <p>
-                    Ik ben Thijs, 16 jaar oud en ik heb mijn examens voor havo succesvol
-                    afgerond. Daar heb ik het profiel natuur en techniek gevolgd, omdat
-                    ik me daar het meeste tot aangetrokken voelde sinds geschiedenis en
-                    aardrijkskunde voor mij totaal geen interessepunten waren.
-                </p>
+                <div id="ik-div">
+                    <p>
+                        Ik ben Thijs, 16 jaar oud en ik heb mijn examens voor havo succesvol
+                        afgerond. Daar heb ik het profiel natuur en techniek gevolgd, omdat
+                        ik me daar het meeste tot aangetrokken voelde sinds geschiedenis en
+                        aardrijkskunde voor mij totaal geen interessepunten waren.
+                    </p>
+                    <img id="profile-photo" src="img/profile/profiel_photo.png" alt="Profile Photo">
+                </div>
                 <h2 id="woonplaats">Waar woon ik?</h2>
                 <p>
                     Ik woon in Schoondijke met beide gescheiden ouders. Een beetje een

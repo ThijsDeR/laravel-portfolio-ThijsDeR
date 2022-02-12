@@ -8,7 +8,7 @@
   
   main {
     animation: AnimateIn 1s ease-out; }
-  
+
   #links {
     margin: 0px;
     padding: 0px;
@@ -82,10 +82,17 @@
     margin: 50px 0;
     min-width: inherit; }
   
+  #ik-div img {
+    width: 200px;
+    height: 300px; 
+    margin-left: auto; }
   @media screen and (min-width: 800px) {
     article {
       width: 60%;
       padding: 10px 40px; }
+    #ik-div{
+      display: grid;
+      grid-template-columns: 60% 30%; }
     #hobbiesdiv {
       display: grid;
       grid-template-columns: 70% 20%; }
@@ -103,6 +110,8 @@
       padding: 10px 20px; }
     .images img {
       display: none; }
+    #ik-div {
+      display: inherit; }
     #games ul {
       background-position: center;
       border-radius: 5px; }
