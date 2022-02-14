@@ -11,7 +11,7 @@ class Grade extends Model
 
     public function addResult ($result) {
         if ($result > $this->best_grade) {
-            if ($this->best_grade < $this->lowest_passing_grade && $result > $this->lowest_passing_grade) {
+            if (($this->best_grade < $this->lowest_passing_grade) && $result >= $this->lowest_passing_grade) {
                 $this->passed_at = now();
             }
             $this->best_grade = $result;

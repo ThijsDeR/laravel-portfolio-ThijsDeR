@@ -22,6 +22,18 @@ nav {
     height: 100%;
     display: inline;
     color: inherit; }
+
+  ul#nav-list li.active {
+    border: 1px solid skyblue;
+    border-radius: 25px;
+    padding: 0 25px;
+    background-color: skyblue;
+    color: black;
+  }
+
+  ul#nav-list li.active a{
+    border-bottom: 0px solid whitesmoke;
+  }
   
   @media screen and (min-width: 800px) {
     nav #nav ul {
