@@ -30,5 +30,11 @@
                 </div>
             </article>
         @endforeach
+
+        <div id="create-faq">
+            <div id="create-faq-button">
+                <a href="./faq/create">+</a>
+            </div>
+        </div>
         
     </main>

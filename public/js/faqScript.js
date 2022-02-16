@@ -30,3 +30,7 @@ closeAll = () => {
     }
     return;
   } 
+
+document.querySelector('div#create-faq-button').addEventListener('click', () => {
+  window.location = './faq/create'
+})

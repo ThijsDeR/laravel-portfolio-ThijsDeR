@@ -13,4 +13,20 @@ class FaqController extends BaseController
             'faqs' => Faq::all()
         ]);
     }
+
+    public function create() {
+        return view('createfaq', [
+            'title' => 'Create FAQ'
+        ]);
+    }
+
+    public function store() {
+        $faq = new Faq();
+        $faq->question = request('question');
+        $faq->link = request('link');
+        $faq->body = request('body');
+        $faq->save();
+
+        return redirect('./faq');
+    }
 }

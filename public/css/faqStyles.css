@@ -37,12 +37,35 @@
       text-shadow: 0px 0px 50px whitesmoke;
       transition: 0.5s; }
   
-  article {
+  article, div#create-faq {
     border-radius: 20px;
     box-shadow: 0px 4px 20px gray;
     padding: 10px 20px;
     margin: 50px calc(5% - 10px);
     color: inherit; }
+  
+  div#create-faq {
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    height: 100px;
+  }
+
+  div#create-faq-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  div#create-faq div#create-faq-button a {
+    border-bottom: 0px;
+  }
   
   div#close-all {
     margin: 0 calc(5% - 10px);
@@ -62,14 +85,14 @@
         transition: 0.5s; }
   
   @media screen and (min-width: 800px) {
-    article {
+    article, div#create-faq {
       width: 90%; }
     .text.open img {
       border-radius: 20px;
       align-self: center; } }
   
   @media screen and (max-width: 800px) {
-    article {
+    article, div#create-faq {
       width: 80%; }
     .text.open img {
       display: none; } }

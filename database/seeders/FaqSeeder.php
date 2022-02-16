@@ -96,7 +96,7 @@ class FaqSeeder extends Seeder
                 </p>
             </div>
             <img src="assets/images/faq/Corona.png" alt="CoronaVirus" />',
-                'link' => ''
+                'link' => null
             ],
             [
                 'question' => 'How can you book a project space in one of the wings?',
@@ -118,7 +118,7 @@ class FaqSeeder extends Seeder
                 </ul>
             </div>
             <img src="assets/images/faq/Meeting-Room.png" alt="Meeting Room" />',
-                'link' => ''
+                'link' => null
             ],
             [
                 'question' => 'What are the instructions if you want to park your car at the HZ parking lot?',
@@ -129,7 +129,7 @@ class FaqSeeder extends Seeder
                 </p>
             </div>
             <img src="assets/images/faq/Parking.png" alt="Parking lot" />',
-                'link' => ''
+                'link' => null
             ],
         ];
 
