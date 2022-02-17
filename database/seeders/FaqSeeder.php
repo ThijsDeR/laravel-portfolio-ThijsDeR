@@ -52,7 +52,7 @@ class FaqSeeder extends Seeder
                     TouchID, followed by Logout.
                 </p>
             </div>
-            <img src="assets/images/faq/Printer.png" alt="Printer" />',
+            <img src="/img/faq/Printer.png" alt="Printer" />',
                 'link' => 'https://hzuniversity.topdesk.net/tas/public/ssp/content/detail/knowledgeitem?unid=788273619b3f42619b41940c9942f3da'
             ],
             [
@@ -84,7 +84,7 @@ class FaqSeeder extends Seeder
                     Logout.
                 </p>
             </div>
-            <img src="assets/images/faq/Scan.png" alt="Scanner" />',
+            <img src="/img/faq/Scan.png" alt="Scanner" />',
                 'link' => 'https://hzuniversity.topdesk.net/tas/public/ssp/content/detail/knowledgeitem?unid=d065a4e8a56d47dcbd0ffb9cdf78f20b'
             ],
             [
@@ -95,7 +95,7 @@ class FaqSeeder extends Seeder
                     you stay at home.
                 </p>
             </div>
-            <img src="assets/images/faq/Corona.png" alt="CoronaVirus" />',
+            <img src="/img/faq/Corona.png" alt="CoronaVirus" />',
                 'link' => null
             ],
             [
@@ -117,7 +117,7 @@ class FaqSeeder extends Seeder
                     <li>Confirm reservation</li>
                 </ul>
             </div>
-            <img src="assets/images/faq/Meeting-Room.png" alt="Meeting Room" />',
+            <img src="/img/faq/Meeting-Room.png" alt="Meeting Room" />',
                 'link' => null
             ],
             [
@@ -128,7 +128,7 @@ class FaqSeeder extends Seeder
                     so you can park your car.
                 </p>
             </div>
-            <img src="assets/images/faq/Parking.png" alt="Parking lot" />',
+            <img src="/img/faq/Parking.png" alt="Parking lot" />',
                 'link' => null
             ],
         ];

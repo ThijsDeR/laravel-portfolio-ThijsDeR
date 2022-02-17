@@ -1,7 +1,7 @@
 @extends('layout')
     
 @section('head-content')
-    <link rel="stylesheet" href="css/faqStyles.css">
+    <link rel="stylesheet" href="css/faq/styles.css">
     <script src="js/faqScript.js" defer></script>
 
 @section('content')
@@ -28,6 +28,8 @@
                 <div class="text">
                     {!! $faq->body; !!}
                 </div>
+                <a class="show-btn" href="./faq/{{$faq->id}}">Show</a>
+
             </article>
         @endforeach
 

@@ -1,9 +1,12 @@
 closeAll = () => {
     Array.from(document.getElementsByClassName("text")).forEach((el) => {
-      el.className = "text"
+      el.className = "text";
+    })
+    Array.from(document.getElementsByClassName("show-btn")).forEach((el) => {
+      el.className = "show-btn";
     })
     Array.from(document.getElementsByClassName("open-btn")).forEach((el) => {
-      el.className = "open-btn"
+      el.className = "open-btn";
       el.innerHTML = "v";
     })
   }
@@ -14,11 +17,13 @@ closeAll = () => {
         el.className = "open-btn active";
         el.innerHTML = "^";
         this.getSibblingBySelector(el.parentElement, ".text").className = "text open";
+        this.getSibblingBySelector(el.parentElement, ".show-btn").className = "show-btn open";
     }
     else if (el.className == "open-btn active") {
         el.className = "open-btn";
         el.innerHTML = "v";
         this.getSibblingBySelector(el.parentElement, ".text").className = "text";
+        this.getSibblingBySelector(el.parentElement, ".show-btn").className = "show-btn";
     }
   }
 

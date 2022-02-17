@@ -39,9 +39,17 @@ Route::get('/', [HomeController::class, 'show']);
 Route::get('/home', [HomeController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
-Route::get('/faq', [FaqController::class, 'show']);
-Route::post('/faq', [FaqController::class, 'store']);
-Route::get('/faq/create', [FaqController::class, 'create']);
+
+
+Route::resource('faq', FaqController::class);
+// Route::get('/faq', [FaqController::class, 'index']);
+// Route::post('/faq', [FaqController::class, 'store']);
+// Route::get('/faq/create', [FaqController::class, 'create']);
+// Route::get('/faq/{faq_id}', [FaqController::class, 'show']);
+// Route::get('/faq/{faq_id}/edit', [FaqController::class, 'edit']);
+// Route::put('/faq/{faq_id}', [FaqController::class, 'update']);
+// Route::delete('/faq/{faq_id}', [FaqController::class, 'delete']);
+
 Route::get('/blog', [BlogController::class, 'show']);
 
 Route::get('/{title}', function ($title) {

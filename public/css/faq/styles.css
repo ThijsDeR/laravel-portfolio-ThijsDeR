@@ -30,6 +30,15 @@
       animation: AnimateInArticle 10s;
       justify-content: space-between; }
   
+  .show-btn {
+    display: none;
+  }
+  
+  .show-btn.open {
+    display: inherit;
+    width: auto;
+  }
+
   a {
     color: inherit;
     transition: 0.5s; }

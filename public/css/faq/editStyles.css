@@ -1,0 +1,85 @@
+form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 80%;
+}
+
+form div {
+    width: 100%;
+    margin: 2.5% 0;
+
+}
+
+form div input, textarea {
+    width: 100%;
+    margin: auto;
+}
+
+form div label {
+    display: block;
+}
+
+form#delete {
+    top: 80%;
+    height: 10%
+}
+
+div#buttons {
+    display: grid;
+    grid-template-columns: 10% 10%;
+    margin: 0;
+    height: 5vh;
+    cursor: pointer;
+}
+
+div.button button, div.button a#cancel {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    cursor: pointer
+}
+
+
+
+div#cancel, div#delete {
+    position: relative;
+    background-color: red;
+    
+}
+
+div#delete button{
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+div#cancel a {
+    border-bottom: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px; 
+}
+
+div#submit {
+    position: relative;
+    background-color: green;
+}
+
+div#submit button{
+    background-color: green;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+}
