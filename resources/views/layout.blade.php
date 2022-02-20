@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @extends('navigation')
+    @include('navigation')
     @yield('content')
 </body>
 
