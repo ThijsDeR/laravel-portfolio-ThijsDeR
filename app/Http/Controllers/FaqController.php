@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class FaqController extends BaseController
@@ -20,44 +21,42 @@ class FaqController extends BaseController
         ]);
     }
 
-    public function show($faq_id) {
+    public function show(Faq $faq) {
         return view('faq.show', [
-            'title' => 'Faq ' . $faq_id,
-            'faq' => Faq::find($faq_id)
+            'title' => 'Faq ' . $faq->id,
+            'faq' => $faq
         ]);
     }
 
-    public function store() {
-        $faq = new Faq();
-        $faq->question = request('question');
-        $faq->link = request('link');
-        $faq->body = request('body');
-        $faq->save();
+    public function store(Request $request) {
+        Faq::create($this->validateFaq($request));
 
         return redirect('./faq');
     }
 
-    public function edit($faq_id) {
+    public function edit(Faq $faq) {
         return view('faq.edit', [
-            'title' => 'Faq ' . $faq_id,
-            'faq' => Faq::find($faq_id)
+            'title' => 'Faq ' . $faq->id,
+            'faq' => $faq
         ]);
     }
 
-    public function update($faq_id) {
-        $faq = Faq::find($faq_id);
-        $faq->question = request('question');
-        $faq->link = request('link');
-        $faq->body = request('body');
-        $faq->save();
+    public function update(Request $request, Faq $faq) {
+        $faq->update($this->validateFaq($request));
 
-        return redirect('./faq/' . $faq_id);
+        return redirect('./faq/' . $faq->id);
     }
 
-    public function destroy($faq_id) {
-        $faq = Faq::find($faq_id);
+    public function destroy(Faq $faq) {
         $faq->delete();
 
         return redirect('./faq');
+    }
+
+    public function validateFaq(Request $request) {
+        return $request->validate([
+            'question' => 'required',
+            'body' => 'required'
+        ]);
     }
 }

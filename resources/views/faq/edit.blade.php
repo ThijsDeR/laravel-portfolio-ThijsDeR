@@ -12,7 +12,7 @@
             @method('put')
             <div class="field">
                 <label for="question" class="label">Question:</label>
-                <input type="text" name="question" class="input" id="question" value="{{$faq->question}}">
+                <input type="text" name="question" class="input" id="question" value="{{$faq->question}}" required>
             </div>
 
             <div class="field">
@@ -22,7 +22,7 @@
 
             <div class="field">
                 <label for="body" class="label">body:</label>
-                <textarea class="textarea" name="body" id="body" cols="30" rows="10">{{$faq->body}}</textarea>
+                <textarea class="textarea" name="body" id="body" cols="30" rows="10" required>{{$faq->body}}</textarea>
             </div>
 
             <div id="buttons">
