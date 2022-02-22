@@ -3,11 +3,12 @@
 @section('head-content')
     <link rel="stylesheet" href="/css/faq/editStyles.css">
     <script src="/js/createfaqScript.js" defer></script>
+@endsection('head-content')
 
 
 @section('content')
     <main id="main">
-        <form id="edit" method="POST" action="./faq/{{$faq->id}}">
+        <form id="edit" method="POST" action="{{route('faq.update', $faq->id)}}">
             @csrf
             @method('put')
             <div class="field">
@@ -27,7 +28,7 @@
 
             <div id="buttons">
                 <div class="button" id="cancel">
-                    <a href="./faq/{{$faq->id}}">Cancel</a>
+                    <a href="{{route('faq.show', $faq->id)}}">Cancel</a>
                 </div>
                 <div class="button" id="submit">
                     <button type="submit">Submit</button>
@@ -35,7 +36,7 @@
             </div>
         </form>
 
-        <form id="delete" method="POST" action="/faq/{{ $faq->id }}">
+        <form id="delete" method="POST" action="{{route('faq.destroy', $faq->id)}}">
             @csrf
             @method('DELETE')
             <div id="buttons">
@@ -45,3 +46,4 @@
             </div>
         </form>
     </main>
+@endsection('content')

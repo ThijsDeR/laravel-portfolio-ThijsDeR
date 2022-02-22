@@ -3,6 +3,7 @@
 @section ('head-content')
     <link rel="stylesheet" href="css/profileStyles.css">
     <script src="js/profileScript.js" defer></script>
+@endsection('head-content')
 
 @section ('content')
     <main id="main">
@@ -83,3 +84,4 @@
             </article>
         </div>
     </main>
+@endsection('content')

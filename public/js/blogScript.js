@@ -8,7 +8,7 @@ closeAll = () => {
     })
   }
   activeState = (event)  => {
-    let el = event.target
+    const el = event.target
     if (el.className == "open-btn") {
         el.className = "open-btn active";
         el.innerHTML = "^";
@@ -22,7 +22,7 @@ closeAll = () => {
   }
 
   getSibblingBySelector = (el, selector) => {
-    var sibling = el.nextElementSibling;
+    let sibling = el.nextElementSibling;
     while (sibling) {
         if (sibling.matches(selector)) return sibling;
         sibling = sibling.nextElementSibling;

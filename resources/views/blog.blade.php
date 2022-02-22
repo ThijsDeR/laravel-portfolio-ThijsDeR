@@ -3,6 +3,7 @@
 @section('head-content')
     <link rel="stylesheet" href="css/blogStyles.css">
     <script src="js/blogScript.js" defer></script>
+@endsection('head-content')
 
 @section('content')
     <main id="main">
@@ -259,3 +260,4 @@
             </div>
         </article>
     </main>
+@endsection('content')

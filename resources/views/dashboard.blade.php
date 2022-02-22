@@ -3,6 +3,7 @@
 @section('head-content')
     <link rel="stylesheet" href="css/dashboardStyles.css">
     <script src="js/navScript.js" defer></script>
+@endsection('head-content')
 
 @section('content')
     <main id="main">
@@ -57,3 +58,4 @@
 
         </div>
     </main>
+@endsection('content')

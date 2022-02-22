@@ -2,6 +2,7 @@
     
 @section('head-content')
     <link rel="stylesheet" href="/css/faq/showStyles.css">
+@endsection('head-content')
 
 @section('content')
     <main id="main">
@@ -21,7 +22,8 @@
             <div class="text">
                 {!! $faq->body; !!}
             </div>
-            <a id="edit-btn" href="./faq/{{$faq->id}}/edit">Edit</a>
+            <a id="edit-btn" href="{{route('faq.edit', $faq->id)}}">Edit</a>
         </article>
 
     </main>
+@endsection('content')

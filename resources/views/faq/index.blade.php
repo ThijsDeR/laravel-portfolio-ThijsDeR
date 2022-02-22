@@ -3,6 +3,7 @@
 @section('head-content')
     <link rel="stylesheet" href="css/faq/styles.css">
     <script src="js/faqScript.js" defer></script>
+@endsection('head-content')
 
 @section('content')
     <main id="main">
@@ -28,15 +29,16 @@
                 <div class="text">
                     {!! $faq->body; !!}
                 </div>
-                <a class="show-btn" href="./faq/{{$faq->id}}">Show</a>
+                <a class="show-btn" href="{{route('faq.show', $faq->id)}}">Show</a>
 
             </article>
         @endforeach
 
         <div id="create-faq">
             <div id="create-faq-button">
-                <a href="./faq/create">+</a>
+                <a href="{{route('faq.create')}}">+</a>
             </div>
         </div>
         
     </main>
+@endsection('content')

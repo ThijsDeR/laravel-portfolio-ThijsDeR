@@ -40,7 +40,8 @@ class GradeSeeder extends Seeder
                 'test_name' => 'Case Study Exam'
             ],
         ];
-
+        
+        Grade::factory(5)->create();
 
         foreach($grades as $grade) {
             $grade_class = new Grade($grade);

@@ -31,7 +31,7 @@ class FaqController extends BaseController
     public function store(Request $request) {
         Faq::create($this->validateFaq($request));
 
-        return redirect('./faq');
+        return redirect()->route('faq.index');
     }
 
     public function edit(Faq $faq) {
@@ -44,13 +44,13 @@ class FaqController extends BaseController
     public function update(Request $request, Faq $faq) {
         $faq->update($this->validateFaq($request));
 
-        return redirect('./faq/' . $faq->id);
+        return redirect()->route('faq.show', $faq->id);
     }
 
     public function destroy(Faq $faq) {
         $faq->delete();
 
-        return redirect('./faq');
+        return redirect()->route('faq.index');
     }
 
     public function validateFaq(Request $request) {

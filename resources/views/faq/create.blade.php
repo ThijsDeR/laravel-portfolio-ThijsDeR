@@ -3,11 +3,11 @@
 @section('head-content')
     <link rel="stylesheet" href="/css/faq/createStyles.css">
     <script src="/js/createfaqScript.js" defer></script>
-
+@endsection('head-content')
 
 @section('content')
     <main id="main">
-        <form method="POST" action="./faq">
+        <form method="POST" action="{{route('faq.index')}}">
             @csrf
             <div class="field">
                 <label for="question" class="label">Question:</label>
@@ -26,7 +26,7 @@
 
             <div id="buttons">
                 <div class="button" id="cancel">
-                    <a href="./faq">Cancel</a>
+                    <a href="{{route('faq.index')}}">Cancel</a>
                 </div>
                 <div class="button" id="submit">
                     <button type="submit">Submit</button>
@@ -35,3 +35,4 @@
             
         </form>
     </main>
+@endsection('content')

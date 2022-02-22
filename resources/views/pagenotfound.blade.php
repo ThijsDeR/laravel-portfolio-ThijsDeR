@@ -3,6 +3,7 @@
 @section ('head-content')
     <link rel="stylesheet" href="css/pagenotfoundStyles.css">
     <script src="js/pagenotfoundScript.js" defer></script>
+@endsection('head-content')
 
 @section ('content')
     <main id="main">
@@ -14,3 +15,4 @@
             <img src="img/pagenotfound/404_not_found.svg" alt="">
         </div>
     </main>
+@endsection('content')
