@@ -26,4 +26,8 @@ class Grade extends Model
         }
 
     }   
+
+    public function course() {
+        return $this->belongsTo(Course::class);
+    }
 }

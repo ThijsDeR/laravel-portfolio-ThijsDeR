@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Routing\Controller as BaseController;
-use App\Models\Grade;
 
 class DashboardController extends BaseController
 {
-    public function show() {
+    public function show() 
+    {
         return view('dashboard', [
             'title' => 'Dashboard',
-            'grades' => Grade::all()
+            'quartiles' => Course::all()->groupBy('quartile')
         ]);
     }
 }

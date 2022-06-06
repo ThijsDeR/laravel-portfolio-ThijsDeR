@@ -6,21 +6,26 @@
 
 @section('content')
     <main id="main">
-        <form method="POST" action="{{route('grade.index')}}">
+        <form method="POST" action="{{route('course.index')}}">
             @csrf
             <div class="field">
                 <label for="name" class="label">Name:</label>
-                <input type="text" name="name" class="input" id="name">
+                <input type="text" name="name" class="input" id="name" required>
             </div>
 
             <div class="field">
-                <label for="best_grade" class="label">Best Grade:</label>
-                <input class="textarea" name="best_grade" id="best_grade" cols="30" rows="10" required>
+                <label for="quartile" class="label">Quartile:</label>
+                <input type="text" name="quartile" class="input" id="quartile" required>
+            </div>
+
+            <div class="field">
+                <label for="ec" class="label">Ec:</label>
+                <input type="text" name="ec" class="input" id="ec" required>
             </div>
 
             <div id="buttons">
                 <div class="button" id="cancel">
-                    <a href="{{route('faq.index')}}">Cancel</a>
+                    <a href="{{route('course.index')}}">Cancel</a>
                 </div>
                 <div class="button" id="submit">
                     <button type="submit">Submit</button>

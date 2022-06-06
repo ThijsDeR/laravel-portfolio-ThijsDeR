@@ -16,36 +16,69 @@ class GradeSeeder extends Seeder
     {
         $grades = [
             [
-                'course_name' => 'Personal Professional Development',
-                'test_name' => 'Portfolio'
+                'course_id' => 1,
+                'name' => 'Portfolio'
             ],
             [
-                'course_name' => 'Personal Professional Development',
-                'test_name' => 'Personality 1'
+                'course_id' => 1,
+                'name' => 'Personality 1'
             ],
             [
-                'course_name' => 'Personal Professional Development',
-                'test_name' => 'Personality 2'
+                'course_id' => 1,
+                'name' => 'Personality 2'
             ],
             [
-                'course_name' => 'Programme and Career Orientation',
-                'test_name' => 'Assesment Exam'
+                'course_id' => 2,
+                'name' => 'Assesment Exam'
             ],
             [
-                'course_name' => 'Computer Science Basics',
-                'test_name' => 'Written Exam'
+                'course_id' => 3,
+                'name' => 'Written Exam'
             ],
             [
-                'course_name' => 'Programming Basics',
-                'test_name' => 'Case Study Exam'
+                'course_id' => 4,
+                'name' => 'Case Study Exam'
+            ],
+            [
+                'course_id' => 5,
+                'name' => 'Case Study Exam'
+            ],
+            [
+                'course_id' => 5,
+                'name' => 'Project'
+            ],
+            [
+                'course_id' => 6,
+                'name' => 'Case Study Exam'
+            ],
+            [
+                'course_id' => 7,
+                'name' => 'Project'
+            ],
+            [
+                'course_id' => 7,
+                'name' => 'Assessment'
+            ],
+            [
+                'course_id' => 7,
+                'name' => 'Report'
+            ],
+            [
+                'course_id' => 8,
+                'name' => 'Portfolio'
+            ],
+            [
+                'course_id' => 8,
+                'name' => 'Project'
+            ],
+            [
+                'course_id' => 8,
+                'name' => 'Assessment'
             ],
         ];
-        
-        Grade::factory(5)->create();
 
         foreach($grades as $grade) {
-            $grade_class = new Grade($grade);
-            $grade_class->save();
+            Grade::create($grade);
         }
     }
 }

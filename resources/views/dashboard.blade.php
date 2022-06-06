@@ -2,7 +2,7 @@
     
 @section('head-content')
     <link rel="stylesheet" href="css/dashboardStyles.css">
-    <script src="js/navScript.js" defer></script>
+    <script src="js/dashboardScript.js" defer></script>
 @endsection('head-content')
 
 @section('content')
@@ -33,20 +33,44 @@
                 <table>
                     <tr>
                         <th>Quartile</th>
-                        <th>Course</th>
+                        <th><a href="{{route('course.index')}}">Course</a></th>
                         <th>EC</th>
                         <th>Exam</th>
-                        <th>Grade</th>
+                        <th><a href="{{route('grade.index')}}">Grade</a></th>
                     </tr>
 
-                    @foreach($grades as $grade)
-                        <tr>
-                            <td>0</td>
-                            <td>{{$grade->course_name}}</td>
-                            <td>0 EC</td>
-                            <td>{{$grade->test_name}}</td>
-                            <td>{{$grade->best_grade ? $grade->best_grade : '0'}}</td>
-                        </tr>
+                    
+                    @foreach($quartiles as $quartileIndex => $quartile)
+                        @foreach($quartile as $courseIndex => $course)
+
+                            @foreach($course->grades as $gradeIndex => $grade)
+      
+                                <tr>
+                                    @if ($courseIndex === 0 && $gradeIndex === 0)
+                                        @php
+                                            $total = 0
+                                        @endphp
+                                        @foreach($quartile as $course)
+                                            @php
+                                                $total += $course->grades->count()
+                                            @endphp
+                                        @endforeach
+                                        <td rowspan="{{$total}}">{{$course->quartile}}</td>
+                                        @php
+                                            $total = 0
+                                        @endphp
+                                    @endif
+                                    @if ($gradeIndex === 0)
+                                        <td rowspan="{{$course->grades->count()}}">{{$course->name}}</td>
+                                        <td rowspan="{{$course->grades->count()}}">{{$course->ec}} EC</td>
+                                    @endif
+                                    <td>{{$grade->name}}</td>
+                                    <td>{{$grade->best_grade ? $grade->best_grade : '0'}}</td>
+                                </tr>
+        
+
+                            @endforeach
+                        @endforeach
                     @endforeach
                 </table>
                 <div id="progress-bar">

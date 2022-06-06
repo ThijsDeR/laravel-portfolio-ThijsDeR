@@ -56,6 +56,7 @@ class FaqController extends BaseController
     public function validateFaq(Request $request) {
         return $request->validate([
             'question' => 'required',
+            'link' => 'nullable',
             'body' => 'required'
         ]);
     }

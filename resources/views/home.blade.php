@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('head-content')
-    <link rel="stylesheet" href="css/homeStyles.css">
-    <script src="js/homeScript.js" defer></script>
+    <link rel="stylesheet" href="/css/homeStyles.css">
+    <script src="/js/homeScript.js" defer></script>
 @endsection('head-content')
 
 @section('content')

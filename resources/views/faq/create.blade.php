@@ -1,7 +1,7 @@
 @extends('layout')
     
 @section('head-content')
-    <link rel="stylesheet" href="/css/faq/createStyles.css">
+    <link rel="stylesheet" href="/css/form/createStyles.css">
     <script src="/js/createfaqScript.js" defer></script>
 @endsection('head-content')
 
