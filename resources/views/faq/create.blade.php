@@ -2,7 +2,7 @@
     
 @section('head-content')
     <link rel="stylesheet" href="/css/form/createStyles.css">
-    <script src="/js/createfaqScript.js" defer></script>
+    <script src="/js/cancelScript.js" defer></script>
 @endsection('head-content')
 
 @section('content')

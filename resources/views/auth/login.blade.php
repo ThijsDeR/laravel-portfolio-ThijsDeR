@@ -35,7 +35,6 @@
 
             <div id="submit-container"> 
                 <button type="submit" class="nice-button">Login</button>
-                <a href="{{route('register')}}" id="register-button">Nog geen Account? Registreer</a>
             </div>
         </form>
     </div>

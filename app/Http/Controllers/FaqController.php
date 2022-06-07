@@ -8,6 +8,17 @@ use Illuminate\Routing\Controller as BaseController;
 
 class FaqController extends BaseController
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => [
+            'create',
+            'store',
+            'edit',
+            'update',
+            'destroy'
+        ]]);   
+    }
     public function index() {
         return view('faq.index', [
             'title' => 'FAQ',

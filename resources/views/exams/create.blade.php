@@ -2,11 +2,12 @@
     
 @section('head-content')
     <link rel="stylesheet" href="/css/form/createStyles.css">
+    <script src="/js/cancelScript.js" defer></script>
 @endsection('head-content')
 
 @section('content')
     <main id="main">
-        <form method="POST" action="{{route('course.index')}}">
+        <form method="POST" action="{{route('exams.index', [$quartile, $course, $ec])}}">
             @csrf
             <div class="field">
                 <label for="name" class="label">Name:</label>
@@ -14,18 +15,13 @@
             </div>
 
             <div class="field">
-                <label for="quartile" class="label">Quartile:</label>
-                <input type="text" name="quartile" class="input" id="quartile" required>
-            </div>
-
-            <div class="field">
-                <label for="ec" class="label">Ec:</label>
-                <input type="text" name="ec" class="input" id="ec" required>
+                <label for="grade" class="label">Grade:</label>
+                <input type="text" name="grade" class="input" id="grade" required>
             </div>
 
             <div id="buttons">
                 <div class="button" id="cancel">
-                    <a href="{{route('course.index')}}">Cancel</a>
+                    <a href="{{route('exams.index', [$quartile, $course, $ec])}}">Cancel</a>
                 </div>
                 <div class="button" id="submit">
                     <button type="submit">Submit</button>

@@ -13,7 +13,9 @@
                 <li>Best Grade: {{$grade->best_grade}}</li>
                 <li>Passed at: {{$grade->passed_at}}</li>
             </ul>
-            <a id="edit-btn" href="{{route('grade.edit', $grade->id)}}">Edit</a>
+            @if(auth()->user())
+                <a id="edit-btn" href="{{route('grade.edit', $grade->id)}}">Edit</a>
+            @endif
         </article>
     </main>
 @endsection('content')

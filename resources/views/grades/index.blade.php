@@ -18,12 +18,13 @@
 
             </article>
         @endforeach
-
-        <div id="create-grade">
-            <div id="create-grade-button">
-                <a href="{{route('grade.create')}}">+</a>
+        @if(auth()->user())
+            <div id="create-grade">
+                <div id="create-grade-button">
+                    <a href="{{route('grade.create')}}">+</a>
+                </div>
             </div>
-        </div>
+        @endif
         
     </main>
 @endsection('content')

@@ -1,7 +1,7 @@
 @extends('layout')
     
 @section('head-content')
-    <link rel="stylesheet" href="css/faq/styles.css">
+    <link rel="stylesheet" href="css/dashboard/indexStyles.css">
     <script src="js/closeScript.js" defer></script>
 @endsection('head-content')
 
@@ -11,32 +11,32 @@
             <p onclick="closeAll()">Close All</p>
         </div>
 
-        @foreach($faqs as $faq)
+        @foreach($exams as $exam)
             <article>
                 <div class="header">
                     <h2>
-                        @if ($faq->link !== null) 
-                            <a href="{{ $faq->link; }}" target="_blank">
-                                {{ $faq->question; }}
-                            </a>
-                        @else 
-                            {{ $faq->question; }}
-                        @endif
+                        Exam: {{$exam->id}}
                     </h2>
                     <p class="open-btn" onclick="activeState(event)">v</p>
                 </div>
                 <br />
                 <div class="text">
-                    {!! $faq->body; !!}
+                    <ul>
+                        <li>Name: {{$exam->name}}</li>
+                        <li>Grade: {{$exam->grade}}</li>
+                        <li>Created At: {{$exam->created_at}}</li>
+                        <li>Updated At: {{$exam->updated_at}}</li>
+                    </ul>
+
                 </div>
-                <a class="show-btn" href="{{route('faq.show', $faq->id)}}">Show</a>
+                <a class="show-btn" href="{{route('exams.show', [$quartile, $course, $ec, $exam])}}">Show</a>
 
             </article>
         @endforeach
         @if(auth()->user())
-            <div id="create-faq">
-                <div id="create-faq-button">
-                    <a href="{{route('faq.create')}}">+</a>
+            <div id="create">
+                <div id="create-button">
+                    <a href="{{route('exams.create', [$quartile, $course, $ec])}}">+</a>
                 </div>
             </div>
         @endif

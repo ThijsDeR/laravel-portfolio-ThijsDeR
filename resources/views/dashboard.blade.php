@@ -26,6 +26,9 @@
                 <li>
                     <a href="https://github.com/ThijsDeR/HZ-ICT-Repo" target="_blank">Github Repo</a>
                 </li>
+                <li>
+                    <a href="{{route('quartiles.index')}}">Quartiles</a>
+                </li>
             </ul>
         </div>
         <div id="section" class="active">
@@ -33,49 +36,38 @@
                 <table>
                     <tr>
                         <th>Quartile</th>
-                        <th><a href="{{route('course.index')}}">Course</a></th>
+                        <th>Course</th>
                         <th>EC</th>
                         <th>Exam</th>
-                        <th><a href="{{route('grade.index')}}">Grade</a></th>
+                        <th>Grade</th>
                     </tr>
-
-                    
                     @foreach($quartiles as $quartileIndex => $quartile)
-                        @foreach($quartile as $courseIndex => $course)
-
-                            @foreach($course->grades as $gradeIndex => $grade)
-      
-                                <tr>
-                                    @if ($courseIndex === 0 && $gradeIndex === 0)
-                                        @php
-                                            $total = 0
-                                        @endphp
-                                        @foreach($quartile as $course)
-                                            @php
-                                                $total += $course->grades->count()
-                                            @endphp
-                                        @endforeach
-                                        <td rowspan="{{$total}}">{{$course->quartile}}</td>
-                                        @php
-                                            $total = 0
-                                        @endphp
-                                    @endif
-                                    @if ($gradeIndex === 0)
-                                        <td rowspan="{{$course->grades->count()}}">{{$course->name}}</td>
-                                        <td rowspan="{{$course->grades->count()}}">{{$course->ec}} EC</td>
-                                    @endif
-                                    <td>{{$grade->name}}</td>
-                                    <td>{{$grade->best_grade ? $grade->best_grade : '0'}}</td>
-                                </tr>
-        
-
+                        @foreach($quartile->courses as $courseIndex => $course)
+                            @foreach($course->ecs as $ecIndex => $ec)
+                                @foreach($ec->exams as $examIndex => $exam)
+                                    <tr>
+                                        @if ($examIndex === 0 && $ecIndex === 0 && $courseIndex === 0)
+                                            <td rowspan="{{$quartile->span()}}">{{$quartile->quartile}}</td>
+                                        @endif
+                                        @if ($examIndex === 0 && $ecIndex === 0)
+                                            <td rowspan="{{$course->span()}}">{{$course->name}}</td>
+                                        @endif
+                                        @if ($examIndex === 0)
+                                            <td rowspan="{{$ec->span()}}">{{$ec->ec}} EC</td>
+                                        @endif
+                                            <td>{{$exam->name}}</td>
+                                            <td>{{$exam->grade}}</td>
+                                    </tr>
+                                @endforeach
                             @endforeach
                         @endforeach
                     @endforeach
+        
+
                 </table>
                 <div id="progress-bar">
-                    <div id="progress" style="width: 37.5%; background-color: lightcoral;">
-                        <p>22.5</p>
+                    <div id="progress" style="width: {{($currentEc / $maxEc) * 100}}%; background-color: {{$progressBarColor}};">
+                        <p>{{$currentEc}}</p>
                     </div>
                 </div>
             </div>

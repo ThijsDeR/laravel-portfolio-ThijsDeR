@@ -13,6 +13,9 @@
                 <li>
                     <a href="{{route('apichallenges')}}">API Challenges</a>
                 </li>
+                <li>
+                    <a href="{{route('logout')}}">Logout</a>
+                </li>
             </ul>
         </div>
         <div id="section" class="active">

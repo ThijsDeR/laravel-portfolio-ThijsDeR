@@ -3,20 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Quartile;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => [
+            'create',
+            'store',
+            'edit',
+            'update',
+            'destroy'
+        ]]);   
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Quartile $quartile)
     {
-        return view('course.index', [
+        return view('courses.index', [
             'title' => 'Courses',
-            'courses' => Course::all()
+            'courses' => Course::where('quartile_id', $quartile->id)->get(),
+            'quartile' => $quartile
         ]);
     }
 
@@ -25,10 +38,11 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Quartile $quartile)
     {
-        return view('course.create', [
-            'title' => 'Create Course'
+        return view('courses.create', [
+            'title' => 'Create Course',
+            'quartile' => $quartile
         ]);
     }
 
@@ -38,11 +52,13 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Quartile $quartile, Request $request)
     {
-        course::create($this->validatecourse($request));
+        $courseArray = $this->validateCourse($request);
+        $courseArray['quartile_id'] = $quartile->id;
+        Course::create($courseArray);
 
-        return redirect()->route('course.index');
+        return redirect()->route('courses.index', [$quartile]);
     }
 
     /**
@@ -51,11 +67,12 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Quartile $quartile, Course $course)
     {
-        return view('course.show', [
-            'title' => 'course ' . $course->id,
-            'course' => $course
+        return view('courses.show', [
+            'title' => 'Course ' . $course->id,
+            'course' => $course,
+            'quartile' => $quartile
         ]);
     }
 
@@ -65,11 +82,12 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Quartile $quartile, Course $course)
     {
-        return view('course.edit', [
-            'title' => 'course ' . $course->id,
-            'course' => $course
+        return view('courses.edit', [
+            'title' => 'Course ' . $course->id,
+            'course' => $course,
+            'quartile' => $quartile
         ]);
     }
 
@@ -80,13 +98,14 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Quartile $quartile, Request $request, Course $course)
     {
         // $course->update($this->validatecourse($request));
+        $courseArray = $this->validateCourse($request);
+        $courseArray['quartile_id'] = $quartile->id;
+        $course->update($courseArray);
 
-        $course->update($this->validateCourse($request));
-
-        return redirect()->route('course.show', $course->id);
+        return redirect()->route('courses.show', [$quartile, $course->id]);
     }
 
     /**
@@ -95,18 +114,16 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Quartile $quartile, Course $course)
     {
         $course->delete();
 
-        return redirect()->route('course.index');
+        return redirect()->route('courses.index', [$quartile]);
     }
 
     public function validateCourse(Request $request) {
         return $request->validate([
-            'name' => 'required',
-            'quartile' => 'required',
-            'ec' => 'required',
+            'name' => 'required'
         ]);
     }
 }

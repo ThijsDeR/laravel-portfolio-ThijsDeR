@@ -38,6 +38,15 @@ services:
     volumes:
       - '.:/app'
     command: ["composer", "install"]
+    
+  node:
+    container_name: npm
+    image: node:latest
+    working_dir: /home/node/app
+    volumes:
+        - ./:/home/node/app
+    command: >
+        bash -c "npm update && npm run ts-watch"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
