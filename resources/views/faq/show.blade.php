@@ -22,7 +22,7 @@
             <div class="text">
                 {!! $faq->body; !!}
             </div>
-            @if(auth()->user())
+            @if(auth()->user()->admin)
                 <a id="edit-btn" href="{{route('faq.edit', $faq->id)}}">Edit</a>
             @endif
         </article>

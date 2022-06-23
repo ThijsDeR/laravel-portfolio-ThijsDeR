@@ -13,7 +13,7 @@
                 <li>Best Grade: {{$grade->best_grade}}</li>
                 <li>Passed at: {{$grade->passed_at}}</li>
             </ul>
-            @if(auth()->user())
+            @if(auth()->user()->admin)
                 <a id="edit-btn" href="{{route('grade.edit', $grade->id)}}">Edit</a>
             @endif
         </article>

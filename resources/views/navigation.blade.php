@@ -1,5 +1,5 @@
 <nav>
-    <h2 id="title" onclick="scrollToTop('main')">{{ $title ?? 'Error'; }}</h2>
+    <h2 id="title" onclick="scrollToTop('main')">{{ $title ?? 'Home'; }}</h2>
     <div id="nav">
         <ul id="nav-list">
             <li class="{{ Request::path() === '/' || Request::path() === 'home' ? 'active' : ''}}"><a href="home">Home</a></li>

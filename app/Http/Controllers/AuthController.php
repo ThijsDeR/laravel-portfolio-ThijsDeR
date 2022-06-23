@@ -26,7 +26,7 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
 
-        return redirect()->back()->withErrors(['username' => 'Invalid Credentials']);
+        return redirect()->back()->withErrors(['all' => 'Could not find matching Credentials']);
     }
 
     public function logout() {
@@ -42,18 +42,16 @@ class AuthController extends Controller
 
     public function register(Request $request) {
         validator($request->all(), [
-            'username' => ['required'],
-            'password' => ['required'],
+            'username' => ['required', 'max:32', 'unique:users'],
+            'password' => ['required', 'min:8'],
         ])->validate();
 
-        try {
-            User::create([
-                'username' => $request->username,
-                'password' => Hash::make($request->password),
-            ]);
-        } catch (Exception $e){
-            return redirect()->back()->withErrors(['username' => 'Already In Use']);
-        }
+        User::create([
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'admin' => false
+        ]);
+
 
         $this->login($request);
 

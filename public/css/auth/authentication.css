@@ -1,3 +1,15 @@
+@keyframes Error {
+    0% {
+      border: 1px solid black;
+    }
+    50% {
+        border: 1px solid red;
+    }
+    100% {
+        border: 1px solid black; 
+    } 
+}
+
 #form-container {
     position: absolute;
     top: 50%;
@@ -19,6 +31,16 @@
     margin: 1vh;
 }
 
+input.error {
+    border: 1px solid black;
+    animation: Error 5s ease-out;
+
+}
+
+p.error {
+    color: red;
+}
+
 #input-container input {
     height: 5vh;
 }
@@ -28,5 +50,21 @@
 }
 
 #register-button {
-    color: blue
+    background-color: blue;
+    color: white;
+    margin: 0 1vw;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer
+}
+
+#submitBtn {
+    background-color: black;
+    color: white;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }

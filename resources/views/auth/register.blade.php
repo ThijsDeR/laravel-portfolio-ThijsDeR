@@ -9,7 +9,7 @@
         <form method="POST" action="{{route('register')}}">
             @csrf
             
-            @if($errors->any())
+            <!-- @if($errors->any())
                 <div id="input-container">
                     <ul>
                         @foreach($errors->all() as $error)
@@ -17,23 +17,29 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
             <div id="input-container">
                 <label for="username">Gebruikersnaam</label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="username" name="username" class="@error('username') error @enderror">
+                @error('username')
+                    <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
             <hr/>
 
             <div id="input-container">
                 <label for="password">Wachtwoord</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" class="@error('password') error @enderror">
+                @error('password')
+                    <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
             <hr/>
 
             <div id="submit-container"> 
-                <button type="submit" class="nice-button">Registreer</button>
+                <button type="submit" id="register-button">Registreer</button>
             </div>
         </form>
     </div>

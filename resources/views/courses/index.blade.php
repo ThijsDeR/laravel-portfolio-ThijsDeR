@@ -33,7 +33,7 @@
 
             </article>
         @endforeach
-        @if(auth()->user())
+        @if(auth()->user()->admin)
             <div id="create">
                 <div id="create-button">
                     <a href="{{route('courses.create', [$quartile])}}">+</a>

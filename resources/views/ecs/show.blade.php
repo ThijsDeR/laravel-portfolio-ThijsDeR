@@ -23,7 +23,7 @@
 
                 <a href="{{route('exams.index', [$quartile, $course, $ec])}}">Show Exams</a>
             </div>
-            @if(auth()->user())
+            @if(auth()->user()->admin)
                 <a href="{{route('ecs.edit', [$quartile, $course, $ec])}}">Edit Ec</a>
             @endif
         </article>

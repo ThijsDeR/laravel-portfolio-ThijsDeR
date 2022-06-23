@@ -8,12 +8,13 @@
 @section ('content')
     <main id="main">
         <div id="notfound">
-            <img src="img/pagenotfound/404_not_found.svg" alt="">
+            <img src="img/ServerFire.png" alt="">
             <div id="page-info">
-                <h2>Page Not Found</h2>
+                <h2>Server Error</h2>
                 <p>
-                    Sorry, <br>
-                    We couldn't find the page you were looking for...
+                    Our server made a Mistake >:(<br>
+                    We know about this mistake and we are working<br>
+                    on a solution
                 </p>
                 <div id="backBtns">
                     <a href="{{url()->previous()}}">Go Back</a>
