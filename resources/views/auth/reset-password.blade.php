@@ -8,7 +8,6 @@
     <div id="form-container">
         <form method="POST" action="{{route('password.update')}}">
             @csrf
-            @if ($seconds)
             <div id="input-container">
                 <label for="email">email</label>
                 <input type="text" id="email" name="email" class="@error('email') error @enderror">

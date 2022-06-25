@@ -120,3 +120,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Inspiration
 * etc
 
+
+## Logging in
+
+* features can be found through loggin in with the details given in the turnt in environment
