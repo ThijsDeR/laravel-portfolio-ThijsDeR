@@ -124,3 +124,31 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Logging in
 
 * features can be found through loggin in with the details given in the turnt in environment
+
+https://hz-portfolio-thijs.herokuapp.com/home 
+
+Is de website
+
+
+
+Inloggen kan door links bovenin te klikken op login of te gaan naar
+
+https://hz-portfolio-thijs.herokuapp.com/login 
+
+Vervolgens kan er naar de dashboard genavigeerd worden
+
+https://hz-portfolio-thijs.herokuapp.com/dashboard 
+
+
+En daar links staat een pijltje wat je kan openklappen. Daaronder staat quartiles.
+
+https://hz-portfolio-thijs.herokuapp.com/quartiles 
+
+
+Als er is ingelogd kan er genavigeerd worden naar de create knop van onder
+
+https://hz-portfolio-thijs.herokuapp.com/quartiles/create
+
+
+en dan kan er een nieuwe quartile aangemaakt worden.
+
