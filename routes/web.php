@@ -12,6 +12,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EcController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\FakeAttackController;
 use App\Http\Controllers\QuartileController;
 use App\Http\Controllers\UserController;
 
@@ -84,10 +85,16 @@ Route::delete('quartiles/{quartile}/courses/{course}/ecs/{ec}/exams/{exam}', [Ex
 
 
 Route::get('/login', [AuthController::class, 'loginView'])->name('loginView');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:login')->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/register', [AuthController::class, 'registerView'])->name('registerView');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/forgot-password', [AuthController::class, 'forgotPasswordView'])->name('password.request');
+Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.email');
+
+Route::get('/reset-password/{token}', [AuthController::class, 'resetPasswordView'])->name('password.reset');
+Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 
 Route::get('/userpage', [UserController::class, 'show'])->name('userpage')->middleware('auth');
 Route::get('/apichallenges', [APIController::class, 'show'])->name('apichallenges')->middleware('auth');
@@ -96,3 +103,5 @@ Route::get('/blog', [BlogController::class, 'show']);
 
 Route::get('/404', fn() => abort(404));
 Route::get('/500', fn() => abort(500));
+
+Route::get('/attack/{id}', [FakeAttackController::class, 'attacked'])->middleware('admin')->name('fakeAttack');

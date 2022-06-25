@@ -15,8 +15,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vh;
+    width: 75vw;
+    height: 75vh;
     background-color: white;
     border-radius: 50px;
     padding: 1vh 1vw;
@@ -47,6 +47,8 @@ p.error {
 
 #submit-container {
     padding: 1vh 1vw;
+    display: flex;
+    align-items: center;
 }
 
 #register-button {
@@ -67,4 +69,8 @@ p.error {
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+
+#forgot-password {
+    color: blue
 }

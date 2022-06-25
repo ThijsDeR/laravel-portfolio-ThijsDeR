@@ -8,20 +8,20 @@
     <div id="form-container">
         <form method="POST" action="{{route('register')}}">
             @csrf
-            
-            <!-- @if($errors->any())
-                <div id="input-container">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif -->
             <div id="input-container">
                 <label for="username">Gebruikersnaam</label>
                 <input type="text" id="username" name="username" class="@error('username') error @enderror">
                 @error('username')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <hr>
+
+            <div id="input-container">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="@error('email') error @enderror">
+                @error('email')
                     <p class="error">{{ $message }}</p>
                 @enderror
             </div>
@@ -34,12 +34,17 @@
                 @error('password')
                     <p class="error">{{ $message }}</p>
                 @enderror
-            </div>
+                <p>Gebruik een sterk wachtwoord en sla het op in een wachtwoordmanager voor extra gemak</p>
+            </div
 
             <hr/>
 
             <div id="submit-container"> 
                 <button type="submit" id="register-button">Registreer</button>
+                <div id="remember-container">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="password">Onthoud Mij</label>
+                </div>
             </div>
         </form>
     </div>
