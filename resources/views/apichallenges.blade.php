@@ -2,22 +2,23 @@
     
 @section('head-content')
     <link rel="stylesheet" href="css/apichallengesStyles.css">
+    <script src="js/apichallenges.js"></script>
 
 @endsection('head-content')
 
 @section ('content')
     <main id="main">
-        <img src="{{$item['links'][0]['href']}}" alt="{{$item['data'][0]['title']}}">
+        <img id="apiImage" src="" alt="" style="width: 50vw; height: 50vh;">
         <ul>
-            <li>Title: {{$item['data'][0]['title']}}</li>
+            <li>Title: <span id="apiTitle"></span></li>
             <li>
                 Keywords: 
-                <ul>
-                    @foreach($item['data'][0]['keywords'] as $keyword)
-                        <li>{{$keyword}}</li>
-                    @endforeach
+                <ul id="apiKeywords">
+    
                 </ul>
             </li>
         </ul>
+
+        <button id="reloadData">Reload</button>
     </main>
 @endsection('content')
