@@ -22,8 +22,10 @@
 
                 <a href="{{route('courses.index', [$quartile])}}">Show Courses</a>
             </div>
-            @if(auth()->user()->admin)
+            @if(auth()->user())
+                @if(auth()->user()->admin)
                 <a href="{{route('quartiles.edit', [$quartile])}}">Edit Quartile</a>
+                @endif
             @endif
         </article>
     </main>

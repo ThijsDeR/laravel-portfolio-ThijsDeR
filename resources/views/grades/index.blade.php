@@ -18,12 +18,14 @@
 
             </article>
         @endforeach
-        @if(auth()->user()->admin)
+        @if(auth()->user())
+            @if(auth()->user()->admin)
             <div id="create-grade">
                 <div id="create-grade-button">
                     <a href="{{route('grade.create')}}">+</a>
                 </div>
             </div>
+            @endif
         @endif
         
     </main>

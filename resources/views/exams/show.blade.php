@@ -23,8 +23,10 @@
                 </ul>
 
             </div>
-            @if(auth()->user()->admin)
-                <a href="{{route('exams.edit', [$quartile, $course, $ec, $exam])}}">Edit Exam</a>
+            @if(auth()->user())
+                @if(auth()->user()->admin)
+                    <a href="{{route('exams.edit', [$quartile, $course, $ec, $exam])}}">Edit Exam</a>
+                @endif
             @endif
         </article>
     </main>

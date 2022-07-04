@@ -33,12 +33,14 @@
 
             </article>
         @endforeach
-        @if(auth()->user()->admin)
-            <div id="create">
-                <div id="create-button">
-                    <a href="{{route('exams.create', [$quartile, $course, $ec])}}">+</a>
+        @if(auth()->user())
+            @if(auth()->user()->admin)
+                <div id="create">
+                    <div id="create-button">
+                        <a href="{{route('exams.create', [$quartile, $course, $ec])}}">+</a>
+                    </div>
                 </div>
-            </div>
+            @endif
         @endif
         
     </main>

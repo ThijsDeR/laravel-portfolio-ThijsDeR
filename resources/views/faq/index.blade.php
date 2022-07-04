@@ -33,12 +33,14 @@
 
             </article>
         @endforeach
-        @if(auth()->user()->admin)
-            <div id="create-faq">
-                <div id="create-faq-button">
-                    <a href="{{route('faq.create')}}">+</a>
+        @if(auth()->user())
+            @if(auth()->user()->admin)
+                <div id="create-faq">
+                    <div id="create-faq-button">
+                        <a href="{{route('faq.create')}}">+</a>
+                    </div>
                 </div>
-            </div>
+            @endif
         @endif
         
     </main>

@@ -33,12 +33,14 @@
 
             </article>
         @endforeach
-        @if(auth()->user()->admin)
+        @if(auth()->user())
+            @if(auth()->user()->admin)
             <div id="create">
                 <div id="create-button">
                     <a href="{{route('ecs.create', [$quartile, $course])}}">+</a>
                 </div>
             </div>
+            @endif
         @endif
         
     </main>
