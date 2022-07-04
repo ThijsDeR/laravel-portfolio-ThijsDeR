@@ -19,7 +19,7 @@ class EcTest extends TestCase
      */
     public function test_if_ec_passed_on_good_grade()
     {
-        $quartile = Quartile::create(['quartile' => 1]);
+        $quartile = Quartile::factory()->create();
         $course = Course::create(['name' => 'test_course', 'quartile_id' => $quartile->id]);
         $ec = Ec::create(['ec' => 10, 'course_id' => $course->id]);
         Exam::create(['name' => 'test exam', 'grade' => 10, 'ec_id' => $ec->id]);
@@ -30,7 +30,7 @@ class EcTest extends TestCase
 
     public function test_if_ec_passed_on_enough_grade()
     {
-        $quartile = Quartile::create(['quartile' => 1]);
+        $quartile = Quartile::factory()->create();
         $course = Course::create(['name' => 'test_course', 'quartile_id' => $quartile->id]);
         $ec = Ec::create(['ec' => 10, 'course_id' => $course->id]);
         Exam::create(['name' => 'test exam', 'grade' => 5.5, 'ec_id' => $ec->id]);
@@ -41,7 +41,7 @@ class EcTest extends TestCase
 
     public function test_if_ec_failed_on_bad_grade()
     {
-        $quartile = Quartile::create(['quartile' => 1]);
+        $quartile = Quartile::factory()->create();
         $course = Course::create(['name' => 'test_course', 'quartile_id' => $quartile->id]);
         $ec = Ec::create(['ec' => 10, 'course_id' => $course->id]);
         Exam::create(['name' => 'test exam', 'grade' => 1, 'ec_id' => $ec->id]);
@@ -52,7 +52,7 @@ class EcTest extends TestCase
 
     public function test_if_ec_failed_on_close_grade()
     {
-        $quartile = Quartile::create(['quartile' => 1]);
+        $quartile = Quartile::factory()->create();
         $course = Course::create(['name' => 'test_course', 'quartile_id' => $quartile->id]);
         $ec = Ec::create(['ec' => 10, 'course_id' => $course->id]);
         Exam::create(['name' => 'test exam', 'grade' => 5.4, 'ec_id' => $ec->id]);
