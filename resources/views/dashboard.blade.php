@@ -56,7 +56,7 @@
                                             <td rowspan="{{$ec->span()}}">{{$ec->ec}} EC</td>
                                         @endif
                                             <td>{{$exam->name}}</td>
-                                            <td>{{$exam->grade}}</td>
+                                            <td><a href="{{route('exams.show', [$quartile, $course, $ec, $exam])}}">{{$exam->grade}}</a></td>
                                     </tr>
                                 @endforeach
                             @endforeach
