@@ -27,7 +27,7 @@ class ReviewController extends Controller
         $reviews = Review::all();
         $reviewAmount = $reviews->count();
         $stars = 0;
-        if ($reviewAmount) {
+        if ($reviewAmount !== 0) {
             foreach($reviews as $review) {
                 $stars += $review->stars;
             }

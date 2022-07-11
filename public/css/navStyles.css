@@ -35,7 +35,7 @@ nav {
     border-bottom: 0px solid whitesmoke;
   }
   
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     nav #nav ul {
       margin: 0;
       margin-right: 5%;
@@ -51,10 +51,16 @@ nav {
       transition: 0.5s; }
     nav #nav ul li a:hover {
       text-shadow: 0px 0px 50px whitesmoke;
-      transition: 0.5s; } }
-  
-  @media screen and (max-width: 800px) {
-    #burger-menu {
+      transition: 0.5s; } 
+    .other {
+      display: none;
+    }}
+    
+    @media screen and (max-width: 1000px) {
+      #other-option {
+        display: none;
+      }
+      #burger-menu {
       position: relative;
       top: 50%;
       transform: translateY(-50%);
@@ -116,10 +122,10 @@ nav {
       width: 90%;
       display: block;
       overflow-y: scroll; }
-    nav #nav ul#nav-list.active li {
+    nav #nav ul#nav-list.active li.nav-option {
       display: inherit;
       text-align: center;
-      font-size: calc((15vw + 5vh) / 2);
+      font-size: calc((12vw + 5vh) / 2);
       margin: 20px 10px;
       list-style: none; }
     nav #nav ul#nav-list.active li a {
@@ -127,5 +133,48 @@ nav {
       text-decoration: none;
       color: white;
       animation: visible 2s;
-      opacity: 1; } }
+      opacity: 1; }}
+
   
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+/* .dropdown .dropBtn {
+  cursor: pointer;
+  font-size: 16px;  
+  outline: none;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+} */
+
+p.dropBtn {
+  border-bottom: 1px solid whitesmoke;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 2px 5px;
+  margin: 2px 5px;
+}
+
+.dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+}

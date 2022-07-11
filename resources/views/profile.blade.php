@@ -15,6 +15,7 @@
                 <li class="woonplaats"><a onclick="scrollToElement('woonplaats')">Woonplaats</a></li>
                 <li class="hobbies"><a onclick="scrollToElement('hobbies')">Hobbies</a></li>
                 <li class="werk"><a onclick="scrollToElement('werk')">Werk</a></li>
+                <li class="werk"><a onclick="scrollToElement('opdrachten')">Wat heb ik al gedaan?</a></li>
                 <li class="werk"><a onclick="scrollToElement('review')">Review</a></li>
             </ul>
         </div>
@@ -80,6 +81,11 @@
                     Ik werk als Software Engineer Bij <a href="https://www.epesi.nl/">Epesi</a> (Middelburg) sinds Januari 2022. Daarvoor heb ik bij de jumbo en een partycentrum
                     naast mijn deur gewerkt (nee, geen festivals of wat dan ook,
                     maar een plek waar je feestjes voor oude zakken kan organiseren).
+                </p>
+                <h2 id="opdrachten">Wat heb ik al gedaan?</h2>
+                <p>
+                    In mijn "Carriere" als Programmeur heb ik al redelijk wat gedaan. Een deel daar van is dus ook te zien online!
+                    Check wat precies <a href="{{route('portfolio.index')}}">Hier</a>.
                 </p>
                 <h2 id="review">Review Me!</h2>
                 <p>Laat weten wat jij vind van mij als persoon, collega, medestudent of wat anders.</p>

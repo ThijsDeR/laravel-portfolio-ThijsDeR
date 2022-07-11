@@ -37,3 +37,17 @@ getChildBySelector = (el, selector) => {
   }
   return;
 }
+
+
+document.querySelector(".dropBtn").addEventListener('click', () => {
+  document.getElementById("navDrop").classList.toggle("show");
+})
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropBtn')) {
+  var navDrop = document.getElementById("navDrop");
+    if (navDrop.classList.contains('show')) {
+      navDrop.classList.remove('show');
+    }
+  }
+}

@@ -68,7 +68,8 @@ class AuthController extends Controller
     }
 
     public function forgotPasswordView() {
-        return view('auth.forgot-password');
+        $title = 'Forgot Password';
+        return view('auth.forgot-password', compact('title'));
     }
 
     public function forgotPassword(Request $request) {
@@ -91,7 +92,8 @@ class AuthController extends Controller
     }
 
     public function resetPasswordView($token) {
-        return view('auth.reset-password', compact('token'));
+        $title = 'Reset Password';
+        return view('auth.reset-password', compact('token', 'title'));
     }
 
     public function resetPassword(Request $request) {

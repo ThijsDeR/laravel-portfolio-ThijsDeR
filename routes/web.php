@@ -13,6 +13,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EcController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\FakeAttackController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\QuartileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
@@ -101,7 +102,9 @@ Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('
 Route::get('/userpage', [UserController::class, 'show'])->name('userpage')->middleware('auth');
 Route::get('/apichallenges', [APIController::class, 'show'])->name('apichallenges')->middleware('auth');
 
-Route::get('/blog', [BlogController::class, 'show']);
+Route::get('/blog', [BlogController::class, 'show'])->name('blog');
+
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
 
 Route::get('/404', fn() => abort(404));
 Route::get('/500', fn() => abort(500));
