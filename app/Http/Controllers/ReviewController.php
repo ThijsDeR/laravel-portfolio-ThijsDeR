@@ -27,12 +27,13 @@ class ReviewController extends Controller
         $reviews = Review::all();
         $reviewAmount = $reviews->count();
         $stars = 0;
-
-        foreach($reviews as $review) {
-            $stars += $review->stars;
+        if ($reviewAmount) {
+            foreach($reviews as $review) {
+                $stars += $review->stars;
+            }
+            $stars /= $reviewAmount;
+            $stars = round($stars, 1);
         }
-        $stars /= $reviewAmount;
-        $stars = round($stars, 1);
 
         return view('reviews.index', compact('reviews', 'stars', 'reviewAmount'));
     }
