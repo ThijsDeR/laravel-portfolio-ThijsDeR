@@ -1,0 +1,65 @@
+@keyframes OpenAnimation {
+    0% {
+      width: 25px;
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.5;
+      width: 150px;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #links {
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    left: 0px;
+    top: 75px;
+    bottom: 0px;
+    min-width: 25px;
+    max-width: 150px;
+    background-color: #252628;
+    z-index: 2; 
+    height: 100%; }
+  
+  #links p {
+    text-align: center;
+    color: inherit;
+    cursor: pointer;
+    font-size: 20px; }
+  
+  #links ul#links-list {
+    padding: 0px;
+    margin: 0px; }
+  
+  #links ul#links-list li {
+    display: none; }
+  
+  #links.active {
+    display: inline;
+    width: 150px; 
+    animation: OpenAnimation 1s ease-in}
+  
+  #links.active ul#links-list {
+    width: 150px; }
+  
+  #links.active ul#links-list li {
+    display: block;
+    text-align: center;
+    width: 100%;
+    list-style: none;
+    padding: 20px 0px;
+    transition: 1s; }
+  
+  #links.active ul#links-list li:hover {
+    transform: translateX(10px);
+    transition: 1s; }
+  
+  #links.active ul#links-list li a {
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none; }
+  

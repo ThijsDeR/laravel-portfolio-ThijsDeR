@@ -7,7 +7,7 @@
 
 @section('content')
     <main id="main">
-        <form method="POST" action="{{route('faq.index')}}">
+        <form method="POST" action="{{route('faq.store')}}">
             @csrf
             <div class="field">
                 <label for="question" class="label">Question:</label>

@@ -11,7 +11,10 @@
       opacity: 1;
       max-height: 10000px;
       overflow: hidden; } }
-  
+  main {
+    display: flex;
+    flex-direction: column;
+  }
   article div.header {
     display: flex;
     justify-content: space-between; }

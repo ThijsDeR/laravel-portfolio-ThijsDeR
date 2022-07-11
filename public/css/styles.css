@@ -2,6 +2,7 @@
 :export {
   assetsLink: "./img";
   mainBackground: #2f3136;
+  mainBackgroundDarker: #252628;
   backgroundGradient: linear-gradient(#2f3136, #2a2c31); }
 
 html {
@@ -57,6 +58,17 @@ a {
   border-bottom: 1px solid whitesmoke;
   color: inherit; }
 
+a.noStyle {
+  text-decoration: none;
+  border-bottom: none;
+  color: inherit;
+}
+
+.required {
+  color: red;
+}
+
 @media screen and (max-width: 800px) {
   main.hidden {
     display: none; } }
+

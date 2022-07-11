@@ -2,6 +2,7 @@
     
 @section('head-content')
     <link rel="stylesheet" href="css/dashboardStyles.css">
+    <link rel="stylesheet" href="css/general/sideLinkStyles.css">
     <script src="js/dashboardScript.js" defer></script>
 @endsection('head-content')
 
@@ -22,12 +23,11 @@
                 <li>
                     <a href="https://teams.microsoft.com/l/team/19%3a827654897ab746089c081f24aff1c984%40thread.skype/conversations?groupId=337e8cca-f67d-4132-9fa9-b0c761bbeb94&tenantId=4c16deb3-342d-4fca-bcd5-b1429308034c" target="_blank">Teams</a>
                 </li>
-                <li><a href="" target="_blank">Study Progress</a></li>
                 <li>
-                    <a href="https://github.com/ThijsDeR/HZ-ICT-Repo" target="_blank">Github Repo</a>
+                    <a href="https://hz.osiris-student.nl/" target="_blank">Study Progress</a>
                 </li>
                 <li>
-                    <a href="{{route('quartiles.index')}}">Quartiles</a>
+                    <a href="https://github.com/ThijsDeR/HZ-ICT-Repo" target="_blank">Github Repo</a>
                 </li>
             </ul>
         </div>
@@ -47,15 +47,15 @@
                                 @foreach($ec->exams as $examIndex => $exam)
                                     <tr>
                                         @if ($examIndex === 0 && $ecIndex === 0 && $courseIndex === 0)
-                                            <td rowspan="{{$quartile->span()}}">{{$quartile->quartile}}</td>
+                                            <td rowspan="{{$quartile->span()}}"><a href="{{route('quartiles.show', $quartile)}}" class="noStyle">{{$quartile->quartile}}</a></td>
                                         @endif
                                         @if ($examIndex === 0 && $ecIndex === 0)
-                                            <td rowspan="{{$course->span()}}">{{$course->name}}</td>
+                                            <td rowspan="{{$course->span()}}"><a href="{{route('courses.show', [$quartile, $course])}}" class="noStyle">{{$course->name}}</a></td>
                                         @endif
                                         @if ($examIndex === 0)
-                                            <td rowspan="{{$ec->span()}}">{{$ec->ec}} EC</td>
+                                            <td rowspan="{{$ec->span()}}"><a href="{{route('ecs.show', [$quartile, $course, $ec])}}" class="noStyle">{{$ec->ec}} EC</a></td>
                                         @endif
-                                            <td>{{$exam->name}}</td>
+                                            <td><a href="{{route('exams.show', [$quartile, $course, $ec, $exam])}}" class="noStyle">{{$exam->name}}</a></td>
                                             <td><a href="{{route('exams.show', [$quartile, $course, $ec, $exam])}}">{{$exam->grade}}</a></td>
                                     </tr>
                                 @endforeach

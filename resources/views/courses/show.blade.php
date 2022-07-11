@@ -6,12 +6,15 @@
 
 @section('content')
     <main id="main">
+        <div id="show-all">
+            <a href="{{route('courses.index', [$quartile])}}">Show All</a>
+        </div>
+
         <article>
             <div class="header">
                 <h2>
                     Course: {{$course->id}}
                 </h2>
-                <p class="open-btn" onclick="activeState(event)">v</p>
             </div>
             <br />
             <div class="text">

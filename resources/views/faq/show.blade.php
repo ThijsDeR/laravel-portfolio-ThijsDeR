@@ -6,6 +6,10 @@
 
 @section('content')
     <main id="main">
+        <div id="show-all">
+            <a href="{{route('faq.index')}}">Show All</a>
+        </div>
+        
         <article>
             <div class="header">
                 <h2>

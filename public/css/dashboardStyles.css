@@ -32,7 +32,27 @@
     100% {
       border: 1px solid gray;
       border-bottom: 1px solid white; } }
-  
+  @keyframes CellHover {
+    0% {
+      background-color: inherit;
+      color: white;
+    }
+    100% {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  @keyframes HeaderCellHover {
+    0% {
+      background-color: white;
+      color: black;
+    }
+    100% {
+      background-color: inherit;
+      color: white;
+    }
+  }
   main {
     animation: AnimateIn 1s ease-out; }
   
@@ -100,6 +120,16 @@
     padding: 20px;
     vertical-align: middle;
     text-align: center; }
+  td:hover {
+    background-color: white;
+    color: black;
+    animation: CellHover 0.25s ease-in-out;
+  }
+  th:hover {
+    background-color: inherit;
+    color: white;
+    animation: HeaderCellHover 0.25s ease-in-out;
+  }
   
   div#progress-bar {
     position: relative;
