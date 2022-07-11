@@ -17,8 +17,8 @@ class DashboardController extends BaseController
             $currentEc += $quartile->ec_amount();
         }
 
-        if ($currentEc === 60) {
-            $progressBarColor = 'lightgreen';
+        if ($currentEc >= 60) {
+            $progressBarColor = 'green';
         }
         else if ($currentEc >= 45) {
             $progressBarColor = 'orange';
