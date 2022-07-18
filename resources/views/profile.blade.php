@@ -87,9 +87,9 @@
                     In mijn "Carriere" als Programmeur heb ik al redelijk wat gedaan. Een deel daar van is dus ook te zien online!
                     Check wat precies <a href="{{route('portfolio.index')}}">Hier</a>.
                 </p>
-                <h2 id="review">Review Me!</h2>
+                <!-- <h2 id="review">Review Me!</h2>
                 <p>Laat weten wat jij vind van mij als persoon, collega, medestudent of wat anders.</p>
-                <a href="{{route('reviews.index')}}">Reviews</a>
+                <a href="{{route('reviews.index')}}">Reviews</a> -->
             </article>
                 
         </div>

@@ -12,7 +12,7 @@
                     <div class="dropdown-content" id="navDrop">
                         <a href="{{route('blog')}}">Blog</a>
                         <a href="{{route('portfolio.index')}}">Portfolio</a>
-                        <a href="{{route('reviews.index')}}">Reviews</a>
+                        <!-- <a href="{{route('reviews.index')}}">Reviews</a> -->
                         @if (auth()->user())
                             <a href="{{route('apichallenges')}}">Api Challenges</a>
                         @endif
@@ -21,7 +21,7 @@
             </li>
             <li class="nav-option other {{ Request::path() === 'faq' ? 'active' : ''}}"><a href="faq">Blog</a></li>
             <li class="nav-option other {{ Request::path() === 'faq' ? 'active' : ''}}"><a href="faq">Portfolio</a></li>
-            <li class="nav-option other {{ Request::path() === 'faq' ? 'active' : ''}}"><a href="faq">Reviews</a></li>
+            <!-- <li class="nav-option other {{ Request::path() === 'faq' ? 'active' : ''}}"><a href="faq">Reviews</a></li> -->
             @if (auth()->user())
                 <li class="nav-option other {{ Request::path() === 'faq' ? 'active' : ''}}"><a href="faq">Api Challenges</a></li>
                 <li class="nav-option {{ Request::path() === 'userpage' ? 'active' : ''}}"><a href="userpage">{{auth()->user()->username}}</a></li>
