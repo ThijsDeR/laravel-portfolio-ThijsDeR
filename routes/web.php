@@ -51,7 +51,7 @@ Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
 
 Route::resource('faq', FaqController::class);
-Route::resource('reviews', ReviewController::class);
+// Route::resource('reviews', ReviewController::class);
 
 Route::get('quartiles', [QuartileController::class, 'index'])->name('quartiles.index');
 Route::get('quartiles/create', [QuartileController::class, 'create'])->name('quartiles.create')->middleware('admin');
